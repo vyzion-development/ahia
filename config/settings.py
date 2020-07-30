@@ -25,7 +25,8 @@ SECRET_KEY = 'hi^gax^!q3kcss*qp!$wa=le^g5me4t^6rknhevfite-brye7s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ahia-project.rodneysampson.repl.co',
+'ahia-project--rodneysampson.repl.co']
 
 
 # Application definition
