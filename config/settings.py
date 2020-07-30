@@ -32,12 +32,21 @@ ALLOWED_HOSTS = ['ahia-project.rodneysampson.repl.co',
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party
+    'debug_toolbar',
+    'django_extensions',
+
+    # Project-specific
+    'users',
+    'ahia',
 ]
 
 MIDDLEWARE = [

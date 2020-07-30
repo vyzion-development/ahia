@@ -14,8 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.conf import settings
+from django.urls import include, path
+from ahia import views as asset_views
 
 urlpatterns = [
+    path('accounts/', include( 'registration.backends.simple.urls')),
     path('admin/', admin.site.urls),
+    path('', asset_views.index, name='list_assets'),
+    path('assets/add/', asset_views.add_assets, name='add_assets'),
+    path('assets/<int:pk>/delete/',asset_views.delete_assets,name='delete_assets'),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+
+        # For django versions before 2.0:
+        # url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns

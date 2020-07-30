@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Delete Assets</h1>
+
+<div>
+  <form action="{% url 'delete_assets' pk=assets.pk %}" method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete {{ album.album_title }}?</p>
+    <div>
+      <button type="submit">Delete Assets</button><br />
+      <a href="{% url 'list_assets' %}">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

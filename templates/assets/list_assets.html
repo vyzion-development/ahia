@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>All Assets</h1>
+
+
+<a href="{% url 'add_assets' %}">Add Asset</a>
+<div class="flex flex-wrap">
+  {% for asset in assets %}
+  <div class="w-33 pa3">
+    <h2>{{ asset.asset_title }}</h2>
+
+
+
+    {% if asset.asset_type %}
+    <div class="flex">
+      <div class="pr2"></div>
+      <div>{{ asset.asset_type }}</div>
+    </div>
+    {% endif %}
+
+    {% if asset.asset_category %}
+    <div class="flex">
+      <div class="pr2"></div>
+      <div>{{ asset.asset_category }}</div>
+    </div>
+    {% endif %}
+
+    {% if asset.asset_upload %}
+    <div class="flex">
+      <div class="pr2"></div>
+      <div>{{ asset.asset_upload }}</div>
+    </div>
+    {% endif %}
+
+  </div>
+  <a href="{% url 'delete_assets' pk=asset.pk %}">Delete Asset</a>
+  {% endfor %}
+</div>  
+{% endblock %}
