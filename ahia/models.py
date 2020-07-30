@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.urls import reverse
 import os
 # Create your models here.
-
+# model branch
 #User model we refer to these as "Students" for now
 class User(models.Model):
   name = models.CharField(max_length=50, null=False, blank=False )
