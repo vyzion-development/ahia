@@ -2,6 +2,7 @@ setup.py
 ahia/__init__.py
 ahia/admin.py
 ahia/apps.py
+ahia/forms.py
 ahia/models.py
 ahia/tests.py
 ahia/views.py
