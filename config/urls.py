@@ -17,5 +17,9 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+    path('admin/', admin.site.urls)
+    path('index/', index_views.index name='index')
+    path('assets/add/', assets_views.add_assets, /<int:pk>/ name='add_assets'),
+    path('assets/delete/', assets_views.delete_assets, /<int:pk>/ name='delete_assets'),
+    
+    ]
