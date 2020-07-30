@@ -1,12 +1,13 @@
 from .models import Asset
 from django import forms
 
-class asset_info_Form(forms.ModelForm):
+class Asset_info_Form(forms.ModelForm):
     class Meta:
         model = Asset
         fields = [
-            'asset_title',
-            'asset_type',         
+            'asset_type', 
+            'asset_title',  
+            'asset_description'      
             'asset_upload',
             'asset_category',
         ]
