@@ -38,11 +38,11 @@ class Category(models.Model):
 #Asset model 
 class Asset(models.Model):
   asset_type = models.CharField(max_length=10, null=False, blank=False)
-  asset_title = models.CharFiled(max_length=100, null=False, blank= False)
+  asset_title = models.CharField(max_length=100, null=False, blank= False)
   asset_description = models.TextField(max_length=350, null=False, blank=False)
   asset_update = models.DateField(null=False, blank=True)
   #need to add upload too directory to upload the user file and this may not be the right directory
-  asset_upload = models.FileField(uploadd_to = 'downloads//%Y/%m/%d', null=False, blank=True)
+  asset_upload = models.FileField(upload_to = 'downloads//%Y/%m/%d', null=False, blank=True)
   #this is the want which acts as thr price in case of transaction
   asset_want = models.CharField(max_length=200, null=False, blank=False)
   #this is for the category of the files if we add them
@@ -54,7 +54,7 @@ class Asset(models.Model):
 #Model for Posting in timeline so people can see your post
 class Post(models.Model):
 	post_title = models.CharField(max_length=100)
-	post_asset = models.ForeignKey(Asset, null=True,blank=True,upload_to='Files')
+	post_asset = models.ForeignKey(Asset, null=True,blank=True, on_delete=models.CASCADE)
 	Post_content = models.TextField()
 	post_date_posted = models.DateTimeField(default=timezone.now)
 	post_author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -72,9 +72,9 @@ class Post(models.Model):
 
 
 #Chat model for messaging if needed 
-class Chat(models.Models):
-  chat_sender = models.ForeignKey(User, related_name="sender")
-  chat_receiver = models.ForeignKey(User, related_name="receiver")
+class Chat(models.Model):
+  chat_sender = models.ForeignKey(User, related_name="sender", on_delete=models.CASCADE)
+  chat_receiver = models.ForeignKey(User, related_name="receiver", on_delete=models.CASCADE)
   chat_msg = models.TextField(max_length=1000)
   chat_timestamp = models.DateTimeField(auto_now_add=True)
 
@@ -85,7 +85,7 @@ class Chat(models.Models):
 class Comment(models.Model):
     com_body = models.TextField()
     com_pub_time = models.DateTimeField()
-   com_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    com_user = models.ForeignKey(User, on_delete=models.CASCADE)
     com_ebook = models.ForeignKey(Asset, on_delete=models.CASCADE)
 
 
