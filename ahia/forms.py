@@ -1,7 +1,7 @@
 from .models import Asset
 from django import forms
 
-class Asset_info_Form(forms.ModelForm):
+class AssetForm(forms.ModelForm):
     class Meta:
         model = Asset
         fields = [

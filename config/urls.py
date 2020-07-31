@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from ahia import views as assets_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls)
-    path('index/', index_views.index name='index')
-    path('assets/add/', assets_views.add_assets, /<int:pk>/ name='add_assets'),
-    path('assets/delete/', assets_views.delete_assets, /<int:pk>/ name='delete_assets'),
+    path('admin/', admin.site.urls),
+    path('', assets_views.list_assets, name='list_assets'),
+    path('assets/<int:pk>/add/', assets_views.add_assets, name='add_assets'),
+    path('assets/<int:pk>/delete/', assets_views.delete_assets,name='delete_assets'),
     
     ]
