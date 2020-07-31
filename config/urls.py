@@ -22,9 +22,9 @@ from ahia import views as asset_views
 
 urlpatterns = [
     path('',asset_views.index, name = 'home'),
-    path('asset/add/', asset_views.add_asset, name='add_aasset'),
+    path('asset/add/', asset_views.add_assets, name='add_assets'),
     path('asset/<int:pk>/delete/',
-         asset_views.delete_asset,
+         asset_views.delete_assets,
          name='delete_asset'),
-    
+    #path('asset/list/', asset_views.list_assets, name='list_assets')
     ]

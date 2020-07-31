@@ -28,3 +28,4 @@ def delete_assets(request, pk):
 
     return render(request, "asset/delete_assets.html",
                  {"asset": asset})
+
