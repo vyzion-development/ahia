@@ -1,2 +1,0 @@
-Django<4.0.0,>=3.0.8
-django-registration-redux<3.0,>=2.8

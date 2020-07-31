@@ -25,18 +25,29 @@ SECRET_KEY = 'hi^gax^!q3kcss*qp!$wa=le^g5me4t^6rknhevfite-brye7s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ahia-project.rodneysampson.repl.co',
+'ahia-project--rodneysampson.repl.co', 'ahia-1.steveoris.repl.co'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party
+    'debug_toolbar',
+    'django_extensions',
+
+    # Project-specific
+    'users',
+    'ahia',
 ]
 
 MIDDLEWARE = [
