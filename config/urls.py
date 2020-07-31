@@ -14,8 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.conf import settings
+from django.urls import include, path
+# importing album from views 👇🏿
+from ahia import views as asset_views
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+    path('',asset_views.index, name = 'home'),
+    path('asset/add/', asset_views.add_asset, name='add_aasset'),
+    path('asset/<int:pk>/delete/',
+         asset_views.delete_asset,
+         name='delete_asset'),
+    
+    ]

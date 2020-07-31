@@ -7,7 +7,10 @@ class Asset_info_Form(forms.ModelForm):
         fields = [
             'asset_type', 
             'asset_title',  
-            'asset_description'      
+            'asset_description',      
             'asset_upload',
+            'asset_update',
             'asset_category',
+            'asset_want',
+
         ]

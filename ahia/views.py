@@ -8,7 +8,7 @@ def index(request):
     assets = Asset.objects.all()
     return render(request, "assets/list_assets.html", context= {"assets": assets})
 
-def add_assets(request):
+def add_asset(request):
     if request.method == 'GET':
        form = Asset_info_Form() 
     else:
@@ -20,7 +20,7 @@ def add_assets(request):
     return render(request, "assets/add_assets.html", {"form": form})
 
 
-def delete_album(request, pk):
+def delete_asset(request, pk):
     asset = get_object_or_404(Asset, pk=pk)
     if request.method == 'POST':
         asset.delete()
