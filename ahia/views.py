@@ -20,7 +20,7 @@ def add_assets(request):
     return render(request, "assets/add_assets.html", {"form": form})
 
 
-def delete_album(request, pk):
+def delete_assets(request, pk):
     asset = get_object_or_404(Asset, pk=pk)
     if request.method == 'POST':
         asset.delete()

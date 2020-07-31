@@ -1,5 +1,16 @@
 [[package]]
 category = "main"
+description = "An auto-attribute dict (and a couple of other useful dict functions)"
+name = "aadict"
+optional = false
+python-versions = "*"
+version = "0.2.3"
+
+[package.dependencies]
+six = ">=1.6.0"
+
+[[package]]
+category = "main"
 description = "ASGI specs, helper code, and adapters"
 name = "asgiref"
 optional = false
@@ -8,6 +19,19 @@ version = "3.2.10"
 
 [package.extras]
 tests = ["pytest", "pytest-asyncio"]
+
+[[package]]
+category = "main"
+description = "A package resource and symbol loading helper library."
+name = "asset"
+optional = false
+python-versions = "*"
+version = "0.6.13"
+
+[package.dependencies]
+aadict = ">=0.2.2"
+globre = ">=0.1.5"
+six = ">=1.10.0"
 
 [[package]]
 category = "dev"
@@ -153,6 +177,14 @@ version = "1.0.2"
 
 [package.dependencies]
 flake8 = "*"
+
+[[package]]
+category = "main"
+description = "A glob matching library, providing an interface similar to the \"re\" module."
+name = "globre"
+optional = false
+python-versions = "*"
+version = "0.1.5"
 
 [[package]]
 category = "dev"
@@ -550,13 +582,19 @@ python-versions = "*"
 version = "0.29.0"
 
 [metadata]
-content-hash = "d17e77442437e7a969834975e1043088aa361bd9fdea9c5a255f679af6583ad7"
+content-hash = "dbcb1678ceea1c02edf797f75dbd51b8db991a20eb5b279d5038411263414d24"
 python-versions = "^3.8"
 
 [metadata.files]
+aadict = [
+    {file = "aadict-0.2.3.tar.gz", hash = "sha256:a77328ac55dbb5735da99441870251befe135f687ab707a7a178561363b27704"},
+]
 asgiref = [
     {file = "asgiref-3.2.10-py3-none-any.whl", hash = "sha256:9fc6fb5d39b8af147ba40765234fa822b39818b12cc80b35ad9b0cef3a476aed"},
     {file = "asgiref-3.2.10.tar.gz", hash = "sha256:7e51911ee147dd685c3c8b805c0ad0cb58d360987b56953878f8c06d2d1c6f1a"},
+]
+asset = [
+    {file = "asset-0.6.13.tar.gz", hash = "sha256:ec56cbf77931cb74d063848531db782f6f0fe1272d1f47f322c15efd0fa732ea"},
 ]
 astroid = [
     {file = "astroid-2.4.1-py3-none-any.whl", hash = "sha256:d8506842a3faf734b81599c8b98dcc423de863adcc1999248480b18bd31a0f38"},
@@ -609,6 +647,9 @@ flake8 = [
 flake8-polyfill = [
     {file = "flake8-polyfill-1.0.2.tar.gz", hash = "sha256:e44b087597f6da52ec6393a709e7108b2905317d0c0b744cdca6208e670d8eda"},
     {file = "flake8_polyfill-1.0.2-py2.py3-none-any.whl", hash = "sha256:12be6a34ee3ab795b19ca73505e7b55826d5f6ad7230d31b18e106400169b9e9"},
+]
+globre = [
+    {file = "globre-0.1.5.tar.gz", hash = "sha256:ee214204f237e9114b8f61eeb61c2abd1e665ca3b59e5a6a0b070971c0bb12e2"},
 ]
 isort = [
     {file = "isort-4.3.21-py2.py3-none-any.whl", hash = "sha256:6e811fcb295968434526407adb8796944f1988c5b65e8139058f2014cbe100fd"},
