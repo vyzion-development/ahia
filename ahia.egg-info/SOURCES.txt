@@ -11,4 +11,5 @@ ahia.egg-info/SOURCES.txt
 ahia.egg-info/dependency_links.txt
 ahia.egg-info/requires.txt
 ahia.egg-info/top_level.txt
+ahia/migrations/0001_initial.py
 ahia/migrations/__init__.py

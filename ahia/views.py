@@ -8,23 +8,23 @@ def index(request):
     assets = Asset.objects.all()
     return render(request, "assets/list_assets.html", context= {"assets": assets})
 
-def add_assets(request):
+def add_asset(request):
     if request.method == 'GET':
        form = Asset_info_Form() 
     else:
        form = Asset_info_Form(data=request.POST)
        if form.is_valid():
            form.save()
-           return redirect(to='home')   #may need to change home
+           return redirect(to='list_assets')   #may need to change home
            
     return render(request, "assets/add_assets.html", {"form": form})
 
 
-def delete_assets(request, pk):
+def delete_asset(request, pk):
     asset = get_object_or_404(Asset, pk=pk)
     if request.method == 'POST':
         asset.delete()
-        return redirect(to='home')
+        return redirect(to='list_assets')
 
     return render(request, "asset/delete_assets.html",
                  {"asset": asset})

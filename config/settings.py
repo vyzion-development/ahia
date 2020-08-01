@@ -27,7 +27,8 @@ SECRET_KEY = 'hi^gax^!q3kcss*qp!$wa=le^g5me4t^6rknhevfite-brye7s'
 DEBUG = True
 
 ALLOWED_HOSTS = ['ahia-project.rodneysampson.repl.co',
-'ahia-project--rodneysampson.repl.co', 'ahia-project.robseals.repl.co',  'ahia--robseals.repl.co', 'ahia.robseals.repl.co']
+'ahia-project--rodneysampson.repl.co', 'ahia-project.robseals.repl.co',  'ahia--robseals.repl.co', 'ahia.robseals.repl.co',
+'ahia-1.steveoris.repl.co']
 
 
 # Application definition
