@@ -26,5 +26,8 @@ urlpatterns = [
     path('asset/<int:pk>/delete/',
          asset_views.delete_asset,
          name='delete_assets'),
+    path('asset/<int:pk>/edit/',
+         asset_views.edit_asset,
+         name='edit_assets')
     #path('asset/list/', asset_views.list_assets, name='list_assets')
     ]

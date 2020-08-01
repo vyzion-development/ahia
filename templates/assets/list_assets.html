@@ -34,6 +34,7 @@
     {% endif %}
 
   </div>
+  <a href="{% url 'edit_assets' pk=asset.pk %}">Edit Asset</a>
   <a href="{% url 'delete_assets' pk=asset.pk %}">Delete Asset</a>
   {% endfor %}
 </div>  

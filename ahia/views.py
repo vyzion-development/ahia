@@ -29,3 +29,18 @@ def delete_asset(request, pk):
     return render(request, "assets/delete_assets.html",
                  {"asset": asset})
 
+def edit_asset(request, pk):
+    asset = get_object_or_404(Asset, pk=pk)
+    if request.method == 'GET':
+        form = Asset_info_Form(instance=asset)
+    else:
+        form = Asset_info_Form(data=request.POST, instance=asset)
+        if form.is_valid():
+            form.save()
+            return redirect(to='list_assets')   
+
+    return render(request, "assets/edit_assets.html", {
+      "form": form,
+      "asset": asset
+       })                      
+
