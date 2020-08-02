@@ -7,33 +7,24 @@
 <a href="{% url 'add_assets' %}">Add Asset</a>
 <div class="flex flex-wrap">
   {% for asset in assets %}
-  <div class="w-33 pa3">
-    <h2>{{ asset.asset_title }}</h2>
+  <div class="album">
+   
+   
+   
+   <div class="text">
+   <h2>{{asset.asset_title }}</h2>
+   
+   <p>
+     <h4> {{asset.asset_type}} </h4>
+   <h4> {{asset.asset_description}}</h4>
+   <h4> {{asset.asset_update}}</h4>
+   <h1> {{asset.asset_want}}</h1>
+   </p>
 
+   
 
-
-    {% if asset.asset_type %}
-    <div class="flex">
-      <div class="pr2"></div>
-      <div>{{ asset.asset_type }}</div>
-    </div>
-    {% endif %}
-
-    {% if asset.asset_category %}
-    <div class="flex">
-      <div class="pr2"></div>
-      <div>{{ asset.asset_category }}</div>
-    </div>
-    {% endif %}
-
-    {% if asset.asset_upload %}
-    <div class="flex">
-      <div class="pr2"></div>
-      <div>{{ asset.asset_upload }}</div>
-    </div>
-    {% endif %}
-
-  </div>
+   </div>
+   </div>
   <a href="{% url 'edit_assets' pk=asset.pk %}">Edit Asset</a>
   <a href="{% url 'delete_assets' pk=asset.pk %}">Delete Asset</a>
   {% endfor %}
