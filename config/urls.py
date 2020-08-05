@@ -21,8 +21,9 @@ from ahia import views as asset_views
 
 
 urlpatterns = [
-    path('',asset_views.index, name = 'list_assets'),
+    path('accounts/', include( 'registration.backends.simple.urls')),
     path('asset/add/', asset_views.add_asset, name='add_assets'),
+    path('',asset_views.index, name = 'list_assets'),
     path('asset/<int:pk>/delete/',
          asset_views.delete_asset,
          name='delete_assets'),
