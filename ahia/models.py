@@ -71,7 +71,7 @@ class Post(models.Model):
 
 
 
-# #Chat model for messaging if needed 
+#Chat model for messaging if needed 
 class Chat(models.Model):
   chat_sender = models.ForeignKey(User, related_name="sender", on_delete=models.CASCADE)
   chat_receiver = models.ForeignKey(User, related_name="receiver", on_delete=models.CASCADE)
@@ -87,6 +87,7 @@ class Comment(models.Model):
   com_pub_time = models.DateTimeField()
   com_user = models.ForeignKey(User, on_delete=models.CASCADE)
   com_ebook = models.ForeignKey(Asset, on_delete=models.CASCADE)
+
 
 
   def pub_date_pretty(self):

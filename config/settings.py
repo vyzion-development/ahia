@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['ahia-project.rodneysampson.repl.co',
 'ahia-1.steveoris.repl.co']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
