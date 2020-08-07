@@ -1,12 +1,16 @@
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Asset 
+from .models import Asset, User
 from .forms import Asset_info_Form
 
 
 def index(request):
     assets = Asset.objects.all()
     return render(request, "assets/list_assets.html", context= {"assets": assets})
+
+def profile(request):
+    userinfo = User.object.all()
+    return render(request,"assets/user_profile.html", context= {"userinfo": userinfo})
 
 def add_assets(request):
     if request.method == 'GET':
