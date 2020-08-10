@@ -41,10 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog.apps.BlogConfig',
+    
+    
 
     # Third-party
     'debug_toolbar',
     'django_extensions',
+   
+   
 
     # Project-specific
     'users',
@@ -130,3 +135,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT= os.path.join(BASE_DIR, 'static'),
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_URL = 'login'
