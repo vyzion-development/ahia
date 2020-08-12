@@ -6,7 +6,7 @@ import os
 # Create your models here.
 # model branch
 #User model we refer to these as "Students" for now
-class User(models.Model):
+class UserProfile(models.Model):
   name = models.CharField(max_length=50, null=False, blank=False )
   user_name = models.CharField(max_length=80, null=False, blank=False)
   user_age = models.DateField(null=False, blank=False)
