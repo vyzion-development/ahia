@@ -1,4 +1,4 @@
-from .models import Asset
+from .models import Asset, Profile
 from django import forms
 
 class Asset_info_Form(forms.ModelForm):
@@ -12,3 +12,15 @@ class Asset_info_Form(forms.ModelForm):
             'asset_upload',
             'asset_want',
         ]
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = [
+            'name',
+            'age',
+            'bio',
+            'location',
+            'image',
+        ]
+    

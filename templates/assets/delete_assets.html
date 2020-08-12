@@ -4,7 +4,7 @@
 <h1>Delete Assets</h1>
 
 <div>
-  <form action="{% url 'delete_assets' pk=assets.pk %}" method="POST">
+  <form action="{% url 'delete_assets' pk=asset.pk %}" method="POST">
     {% csrf_token %}
     <p>Are you sure you want to delete {{ album.album_title }}?</p>
     <div>
