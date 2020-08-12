@@ -1,12 +1,30 @@
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Asset 
-from .forms import Asset_info_Form
+from .models import Asset, Profile
+from .forms import Asset_info_Form, ProfileForm
+from django.conf import settings
 
 
 def index(request):
     assets = Asset.objects.all()
     return render(request, "assets/list_assets.html", context= {"assets": assets})
+
+
+
+
+def profile(request, pk):
+    profile = get_object_or_404(Profile, user_id=pk)
+    return render(request,"assets/user_profile.html", context= {"profile": profile})
+
+def add_profile(request):
+    if request.method == 'GET':
+       form = ProfileForm() 
+    else:
+       form = ProfileForm(data=request.POST)
+       if form.is_valid():
+           form.save(commit=False)
+           return redirect(to='user_profile', pk=request.user.pk)
+    return render(request, "assets/add_profile.html", {"form": form})
 
 def add_asset(request):
     if request.method == 'GET':
