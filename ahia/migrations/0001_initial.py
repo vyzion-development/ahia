@@ -75,6 +75,7 @@ class Migration(migrations.Migration):
                 ('chat_sender', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='sender', to='ahia.User')),
             ],
         ),
+
         migrations.AddField(
             model_name='asset',
             name='asset_category',

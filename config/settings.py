@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,8 +27,9 @@ SECRET_KEY = 'hi^gax^!q3kcss*qp!$wa=le^g5me4t^6rknhevfite-brye7s'
 DEBUG = True
 
 ALLOWED_HOSTS = ['ahia-project.rodneysampson.repl.co',
-'ahia-project--rodneysampson.repl.co', 'ahia-1.steveoris.repl.co'
-]
+'ahia-project--rodneysampson.repl.co', 'ahia-project.robseals.repl.co',  'ahia--robseals.repl.co', 'ahia.robseals.repl.co',
+'ahia-1.steveoris.repl.co']
+
 
 
 # Application definition
@@ -45,7 +47,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_extensions',
 
-    # Project-specific
+    #Project-specific
     'users',
     'ahia',
 ]
@@ -65,7 +67,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,3 +131,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTH_USER_MODEL = 'users.User'

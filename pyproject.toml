@@ -17,6 +17,7 @@ django-localflavor = "^3.0.1"
 django-registration-redux="^2.8"
 python = "^3.8"
 werkzeug = "^1.0.1"
+asset = "^0.6.13"
 [tool.poetry.dev-dependencies]
 
 mypy = "^0.770"
