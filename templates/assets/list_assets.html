@@ -7,7 +7,8 @@
 <a href="{% url 'add_assets' %}">Add Asset</a>
 <div class="flex flex-wrap">
   {% for asset in assets %}
-  <div class="album">
+  <div class="assets">
+
    
    
    
@@ -25,9 +26,10 @@
 
    </div>
    </div>
-   <p>test</p>
+
   <a href="{% url 'edit_assets' pk=asset.pk %}">Edit Asset</a>
   <a href="{% url 'delete_assets' pk=asset.pk %}">Delete Asset</a>
+  <a href="{% url 'user_profile' pk=asset.pk %}">View Profile</a>
   {% endfor %}
 </div>  
 {% endblock %}

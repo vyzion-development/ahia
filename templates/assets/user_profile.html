@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<div class="w-33 pa3">
+	<h2>{{ profile.name }}</h2>
+
+    {% if profile.age %}
+    <div class="flex">
+      <div class="pr2"><i class="icofont-phone"></i></div>
+      <div>{{ profile.age }}</div>
+    </div>
+    {% endif %}
+
+    {% if profile.location %}
+    <div class="flex">
+      <div class="pr2"><i class="icofont-ui-email"></i></div>
+      <div>{{ profile.locaton }}</div>
+    </div>
+    {% endif %}
+
+    {% if profile.image %}
+    <!-- <h3>Assets</h3> -->
+    <div class="flex">
+      <div class="pr2 list">
+      
+        <img>{{profile.image}}</img>
+      
+      </div>
+    </div>
+
+
+    {% endif %}
+
+    {% for asset in profile.user.assets.all %}
+    <div class='user_asset'>
+        <p>{{asset}}</p>
+    </div>
+    {% endfor %}
+
+    <p>   
+      <a class="red" href="{% url 'list_assets' %}">Home</a><br>
+    </p> 
+
+
+  </div>
+
+{% endblock %}
