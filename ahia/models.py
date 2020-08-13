@@ -11,7 +11,6 @@ from django.conf import settings
 
 class Profile(models.Model):
   user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-
   name = models.CharField(max_length=50, null=False, blank=False )
   age = models.DateField(null=False, blank=False)
   bio = models.TextField(max_length=350, null=False, blank=False)
@@ -42,19 +41,20 @@ class Category(models.Model):
 
 #Asset model 
 class Asset(models.Model):
-  asset_type = models.CharField(max_length=10, null=False, blank=False)
-  asset_title = models.CharField(max_length=100, null=False, blank= False)
-  asset_description = models.TextField(max_length=350, null=False, blank=False)
-  asset_update = models.DateField(null=False, blank=True)
-  #need to add upload too directory to upload the user file and this may not be the right directory
-  asset_upload = models.FileField(upload_to = 'downloads//%Y/%m/%d', null=False, blank=True)
-  #this is the want which acts as thr price in case of transaction
-  asset_want = models.CharField(max_length=200, null=False, blank=False)
-  #this is for the category of the files if we add them
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='assets')
+    asset_type = models.CharField(max_length=10, null=False, blank=False)
+    asset_title = models.CharField(max_length=100, null=False, blank= False)
+    asset_description = models.TextField(max_length=350, null=False, blank=False)
+    asset_update = models.DateField(null=False, blank=True)
+#need to add upload too directory to upload the user file and this may not be the right directory
+    asset_upload = models.FileField(upload_to = 'downloads//%Y/%m/%d', null=False, blank=True)
+#this is the want which acts as thr price in case of transaction
+    asset_want = models.CharField(max_length=200, null=False, blank=False)
+#this is for the category of the files if we add them
   
 
-  def __str__(self):
-        return self.title
+    def __str__(self):
+            return self.asset_title
 
 
 #Model for Posting in timeline so people can see your post

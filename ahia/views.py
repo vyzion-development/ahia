@@ -14,6 +14,7 @@ def index(request):
 
 def profile(request, pk):
     profile = get_object_or_404(Profile, user_id=pk)
+    assets = Asset.objects.filter()
     return render(request,"assets/user_profile.html", context= {"profile": profile})
 
 def add_profile(request):

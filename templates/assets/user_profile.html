@@ -31,10 +31,15 @@
 
     {% endif %}
 
-    <p>
-      <a href="{% url 'list_assets' pk=list_assets.pk %}">View Assets</a><br>    
-      <a class="red" href="{% url 'delete_user' pk=user.pk %}">Delete Profile</a><br>
-    </p>
+    {% for asset in profile.user.assets.all %}
+    <div class='user_asset'>
+        <p>{{asset}}</p>
+    </div>
+    {% endfor %}
+
+    <p>   
+      <a class="red" href="{% url 'list_assets' %}">Home</a><br>
+    </p> 
 
 
   </div>
